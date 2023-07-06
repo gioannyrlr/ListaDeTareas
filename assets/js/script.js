@@ -1,9 +1,13 @@
+
+// Obtiene la referencia al formulario, a los elementos que se obtienen del input y a la lista de tarea.
 const taskForm = document.getElementById('task-form');
 const taskInput = document.getElementById('task');
 const taskList = document.getElementById('task-list');
 
+// Inicializa la matriz de tareas con los valores almacenados en el almacenamiento local o una matriz vacía si no hay tareas almacenadas.
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
+// Muestra las tareas en la lista de tareas.
 function displayTasks() {
   taskList.innerHTML = '';
   tasks.forEach((task, index) => {
@@ -29,7 +33,8 @@ function displayTasks() {
   });
 }
 
-function addTask(e) {
+// Agrega una nueva tarea a la lista de tareas.
+function addTask(e) { // El evento de envío del formulario.
   e.preventDefault();
   const taskText = taskInput.value.trim();
   if (taskText) {
@@ -48,7 +53,8 @@ function addTask(e) {
   }
 }
 
-function deleteTask(index) {
+// Elimina una tarea de la lista de tareas.
+function deleteTask(index) { // El índice de la tarea a eliminar.
   Swal.fire({
     title: '¿Eliminar esta tarea?',
     showCancelButton: true,
@@ -63,13 +69,15 @@ function deleteTask(index) {
   })
 }
 
-function editTask(index, newText) {
+// Edita una tarea de la lista de tareas.
+function editTask(index, newText) { // El índice de la tarea a editar y el nuevo texto de la tarea.
   tasks[index].text = newText;
   saveTasks();
   displayTasks();
 }
 
-function showEditPopup(index) {
+// Muestra un cuadro de diálogo para editar una tarea.
+function showEditPopup(index) { // El índice de la tarea a editar.
   Swal.fire({
     title: 'Editar',
     input: 'text',
@@ -87,15 +95,18 @@ function showEditPopup(index) {
   })
 }
 
+// Guarda las tareas en el almacenamiento local.
 function saveTasks() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+// Carga las tareas almacenadas del almacenamiento local.
 function loadTasks() {
   tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 }
 
-taskList.addEventListener('click', (e) => {
+// Maneja los clics en la lista de tareas.
+taskList.addEventListener('click', (e) => { // El evento de clic.
   if (e.target.classList.contains('btn-edit')) {
     const index = e.target.dataset.index;
     showEditPopup(index);
@@ -111,7 +122,8 @@ taskList.addEventListener('click', (e) => {
   }
 });
 
-taskForm.addEventListener('submit', (e) => {
+// Maneja el envío del formulario de tareas.
+taskForm.addEventListener('submit', (e) => { // El evento de envío del formulario.
   e.preventDefault();
   const input = e.target.elements.taskInput;
   const taskText = input.value.trim();
@@ -125,12 +137,14 @@ taskForm.addEventListener('submit', addTask);
 
 displayTasks();
 
-function taskIsDone(index) {
+// Muestra las tareas completadas o no completadas.
+function taskIsDone(index) { // El índice de la tarea.
   const taskItem = document.querySelectorAll('.list-group-item')[index];
   taskItem.querySelector('.task-text').classList.toggle('taskDone');
   saveTasks();
 }
 
+// Elimina todas las tareas completadas de la lista.
 function deleteTasksDone() {
   const uncompletedTasks = [];
 
@@ -154,4 +168,5 @@ function deleteTasksDone() {
   });
 };
 
+// Carga las tareas almacenadas cuando se carga la ventana.
 window.addEventListener('load', loadTasks);

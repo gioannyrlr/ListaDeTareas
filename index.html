@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recordatorios</title>
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/png" href="assets/images/icon.png"/>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />  <!-- CSS -->
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Formulario -->
+    <div class="card">
+      <div class="card-body">
+        <h1>LISTA DE TAREAS</h1>
+        <div class="row">
+          <form id="task-form" class="col-12">
+            <div class="form-group row">
+              <div class="form">
+                <input type="text" class="form-control" id="task" placeholder="Nuevo...">
+              </div>
+              <div class="btn-plus">
+                <button type="submit" class="btn-add btn-block"><i class="fas fa-plus"></i> </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lista de tareas -->
+    <div class="card">
+      <div class="card-body">
+        <ul id="task-list" class="list-group"></ul> 
+        <button onclick="deleteTasksDone()" class="btn" id="clear-btn">Eliminar tareas completadas</button>  
+      </div>   
+    </div>
+  </div>
+
+<!-- Footer -->
+<footer>
+  <p>
+    Copyright &copy; 
+    <script>document.write(new Date().getFullYear())</script>
+    - <a href="https://github.com/gioannyrlr" target="_blank">@gioannyrlr</a>
+  </p>
+</footer>
+
+<!-- SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- Bootstrap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNS3vx" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- Script JS -->
+<script src="assets/js/script.js"></script>
+</body>
+</html>

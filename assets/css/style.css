@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+*{
+	font-family: 'Manrope', sans-serif;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+  
+body{
+    background: #f7f6fb;
+    min-height: 100vh;
+    margin: auto; 
+    font-size: 18px;
+} 
+
+h1{
+    font-family: 'Rampart One', cursive;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    color: #202020;
+    margin-bottom: 20px;
+}
+
+.btn{
+    padding: 5px;
+}
+
+i{
+    font-size: 1.2rem;
+}
+
+button#clear-btn{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 15px;
+    background-color: #faa631;
+    border-radius: 15px;
+    padding: 8px;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+button#clear-btn:hover{
+    background-color: #e4911b;
+}
+
+.btn.focus, .btn:focus{
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0);
+}
+
+button:focus{
+    outline: 0;
+}
+
+.container{
+    margin: auto;
+    width: 70%;
+    margin-top: 5em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card{
+    border-radius: 15px;
+    box-shadow: #e2e2e2 0px 20px 30px -10px;   
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.card-body{
+    padding: 20px;
+}
+
+.row{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form{
+    width: 76%;
+    margin-right: 5px;
+}
+
+.btn-plus{
+    width: 15%;
+}
+
+.btn-add{
+    background-color: #faa631;
+    border: 0;
+    border-radius: 15px;
+    padding: 4px;
+    color: white;
+    cursor:pointer;
+}
+
+.task-text{
+    margin-left: 5px;
+    border-radius: 15px;
+}
+
+.taskDone{
+  text-decoration: line-through;
+  color: #000000;
+  font-style: italic;
+  opacity: 0.3;
+}
+
+.btnIsDone, .btn-edit, .btn-delete, .btn-done{
+    background-color: white;
+    color: rgba(18, 18, 18, 0.477);
+    font-weight: 100 !important;
+    border: 0;
+}
+
+.btn-add:hover{
+    background-color: #e4911b;
+}
+
+.btn-delete:hover{
+    color: #fe453a;
+}
+
+.btn-edit:hover{
+    color: #007aff;
+}
+
+.btn-done:hover{
+    color: #4cd964;
+}
+
+.list-group-item{
+    padding: 0.3rem 0.3rem;
+    border-radius: 15px !important;
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.634);
+    margin-top: 20px;
+}
+
+a{
+    color:#e4911b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #faa631;
+    text-decoration: none;
+}
+
+.form-control{
+    border-radius: 15px;
+}
+
+.form-control:focus{
+    background-color: #fff;
+    border: 3px solid #f49707;
+    outline: none;
+    box-shadow: none;
+}
+
+.form-control::placeholder{
+    opacity: 0.5;
+}
+
+button.swal2-confirm.swal2-styled{
+    background-color: #faa631;
+    width: 115px;
+    border: 0;
+}
+
+.swal2-styled.swal2-confirm:focus{
+    box-shadow: 0 0 0 2px #faa631;
+}
+
+.swal2-popup.swal2-modal.swal2-show{
+    color: #291a3a;
+    width: 60%;
+}
+
+.swal2-input:focus, .swal2-file:focus, .swal2-textarea:focus{
+    outline: 0;
+    box-shadow: 0 0 0 2px #faa631 !important;
+    border-radius: 15px;
+}
+
+.swal2-title{
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 870px) and (min-height: 300px){
+    .container{ width: 95%; margin: auto; }
+    body{ font-size: 14px; margin-top: 3.5em; }
+    h1{ font-size: 40px; }
+    .card{ width: 100%; }
+    .btn-add{ padding: 7px; }
+    button#clear-btn{ font-size: 12px; }
+    .swal2-popup.swal2-modal.swal2-show{ color: #222222; width: 70%; font-size: 10px; }
+}
